@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.AldieNightStar:JSignal:2eae03bccf'
+    implementation 'com.github.AldieNightStar:JSignal:a32f4804f6'
 }
 ```
 
