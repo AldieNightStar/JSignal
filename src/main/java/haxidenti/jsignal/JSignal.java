@@ -40,4 +40,8 @@ public class JSignal<T> {
         };
         tasks.add(task);
     }
+
+    public void disconnect(JSignalTask<T> task) {
+        tasks.remove(task);
+    }
 }
