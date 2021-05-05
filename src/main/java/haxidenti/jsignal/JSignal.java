@@ -40,13 +40,4 @@ public class JSignal<T> {
         };
         tasks.add(task);
     }
-
-    public void connectOnceFiltered(JSignalTask<T> task, Predicate<T> filter) {
-        JSignalTask<T> subTask = data -> {
-            if (filter.test(data)) {
-                task.call(data);
-            }
-        };
-        onceTask.add(task);
-    }
 }

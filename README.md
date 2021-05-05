@@ -3,6 +3,21 @@
 
 # Usage
 ```java
+JSignal<PrintDetails> signal = new JSignal<>();
+
+// Connect to a signal
+signal.coonect(data -> {})
+
+// Connect to a signal but for once
+signal.coonectOnce(data -> {})
+
+// Connect to a signal but filter messages
+// For example we will allow only signals with: userName == "HaxiDenti"
+signal.coonectFiltered(data -> {}, data -> data.userName.equals("HaxiDenti"))
+```
+
+# Example
+```java
 import haxidenti.jsignal.JSignal;
 
 public class Main {
