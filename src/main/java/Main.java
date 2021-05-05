@@ -1,33 +1,19 @@
-# JSignal
-## Inspired by Godot signals
-
-# Usage
-```java
 import haxidenti.jsignal.JSignal;
 
 public class Main {
 
-    // Here is our signal
     private static JSignal<PrintDetails> printSignals = new JSignal<>();
 
-    
-    // Main method
     public static void main(String[] args) {
-        
-        // Call signal receiver methods
-        // They will connect to a signal
         printer1();
         printer2();
         printer3();
 
-        // Emit signal and test
         for (int i = 0; i < 1000; i++) {
             printSignals.emit(new PrintDetails(i % 3, "Text #" + i));
         }
     }
-    
-    
-    // Signal message entity
+
     public static class PrintDetails {
         public int id;
         public String text;
@@ -37,12 +23,6 @@ public class Main {
             this.text = text;
         }
     }
-    
-    
-    
-    // ==========================
-    // Signal receiver methods
-    // ==========================
 
     public static void printer1() {
         printSignals.connectFiltered(s -> {
@@ -62,4 +42,3 @@ public class Main {
         }, d -> d.id == 3);
     }
 }
-```
